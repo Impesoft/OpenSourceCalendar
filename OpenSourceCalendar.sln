@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35323.107
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenSourceCalendar", "OpenSourceCalendar\OpenSourceCalendar\OpenSourceCalendar.csproj", "{942AB183-9E66-4C9B-9DB2-69C1F09C8A0B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenSourceCalendar.Client", "OpenSourceCalendar\OpenSourceCalendar.Client\OpenSourceCalendar.Client.csproj", "{D86EC29C-7B4A-47A4-85EB-9A3E53FBCDAC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{942AB183-9E66-4C9B-9DB2-69C1F09C8A0B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{942AB183-9E66-4C9B-9DB2-69C1F09C8A0B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{942AB183-9E66-4C9B-9DB2-69C1F09C8A0B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{942AB183-9E66-4C9B-9DB2-69C1F09C8A0B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D86EC29C-7B4A-47A4-85EB-9A3E53FBCDAC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D86EC29C-7B4A-47A4-85EB-9A3E53FBCDAC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D86EC29C-7B4A-47A4-85EB-9A3E53FBCDAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D86EC29C-7B4A-47A4-85EB-9A3E53FBCDAC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5BD55C5F-AFE4-4614-9FC9-68BCA9E349D6}
+	EndGlobalSection
+EndGlobal

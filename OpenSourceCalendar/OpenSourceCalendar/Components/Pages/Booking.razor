@@ -1,0 +1,55 @@
+﻿@page "/Booking"
+@page "/Book"
+@inject IJSRuntime JSRuntime
+@rendermode InteractiveServer
+
+@using System.Globalization
+@using CasaAdelia.Services
+@using CasaAdelia.Components.Types
+<PageTitle>Contact</PageTitle>
+
+<div class="container">
+    @if (_loading)
+    {
+        <div class="loading-screen">
+            <p>Laden...</p>
+            <img src="/img/spinner.webp" alt="Loading" /> <!-- Use a spinner or any loading animation here -->
+        </div>
+    }
+    else
+    {
+        <h1>Calendar</h1>
+        <div>
+            <button class="btn btn-light previous-next" disabled="@_busy" @onclick="PreviousMonth">← @PreviousMonthName</button>
+            <button class="btn btn-light previous-next" disabled="@_busy" @onclick="NextMonth">@NextMonthName →</button>
+        </div>
+        <div class="calendar-container">
+            <input id="selected-month" class="w-100 btn-lg btn-light select-month" type="month" @bind="@SelectedMonth" />
+            <div class="calendar-grid">
+                @foreach (var day in DaysInSelectedMonth)
+                {
+                    <div class="day @(day == DateTime.MinValue ? "padding" : "")">
+                        @if (day != DateTime.MinValue)
+                        {
+                            <div class="day-info">
+                                <span class="full-day">@day.ToString("dddd\u00A0d", new CultureInfo("nl-BE"))</span>
+                                <span class="abbrev-day">@day.ToString("ddd", new CultureInfo("nl-BE")).Substring(0, 2) @day.Day</span>
+                            </div>
+                            <div class="rooms-grid">
+                                @foreach (var room in roomNames)
+                                {
+                                    <button disabled="@cantBeBooked(day, room.Value)" class="@GetRoomState(day, room.Value)"
+                                            @onclick="@(e => ToggleRoomState(day, room.Value, e))"
+                                            data-short-name="@room.Value.Substring(0, 1).ToUpper()"
+                                            title="@GetTooltip(day,room.Value)">
+                                        @room.Value
+                                    </button>
+                                }
+                            </div>
+                        }
+                    </div>
+                }
+            </div>
+        </div>
+    }
+</div>
